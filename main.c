@@ -1,91 +1,91 @@
-//#include "DLL.h"
-// #include "ArrayStack.h"
-// #include "CircularQueue.h"
+#include "DLL.h"
+#include "ArrayStack.h"
+#include "CircularQueue.h"
 #include "LCRS.h"
 
 int main()
 {
     // DLL ex
-    // Node * List = NULL;
-    // Node * NewNode = NULL;
+    Node * List = NULL;
+    Node * NewNode = NULL;
     
-    // NewNode = DLL_CreateNode(117);
+    NewNode = DLL_CreateNode(117);
     
-    // DLL_AppendNode(&List, NewNode);
-    // //ListPrint(List);
+    DLL_AppendNode(&List, NewNode);
+    //ListPrint(List);
 
-    // NewNode = DLL_CreateNode(119);
-    // DLL_AppendNode(&List, NewNode);
-    // ListPrint(List);
+    NewNode = DLL_CreateNode(119);
+    DLL_AppendNode(&List, NewNode);
+    ListPrint(List);
 
 
-    // Node * List1 = NULL;
-    // NewNode = DLL_CreateNode(120);
+    Node * List1 = NULL;
+    NewNode = DLL_CreateNode(120);
     
-    // DLL_AppendNode(&List1, NewNode);
-    // //ListPrint(List);
+    DLL_AppendNode(&List1, NewNode);
+    //ListPrint(List);
 
-    // NewNode = DLL_CreateNode(121);
-    // DLL_AppendNode(&List1, NewNode);
-    // ListPrint(List1);
+    NewNode = DLL_CreateNode(121);
+    DLL_AppendNode(&List1, NewNode);
+    ListPrint(List1);
 
     // Stack ex
-    // int i = 0; 
-    // ArrayStack* Stack = NULL;
-    // AS_CreateStack(&Stack, 10);
-    // AS_Push(Stack, 3);
-    // AS_Push(Stack, 37);
-    // AS_Push(Stack, 11);
-    // AS_Push(Stack, 12);
+    int i = 0; 
+    ArrayStack* Stack = NULL;
+    AS_CreateStack(&Stack, 10);
+    AS_Push(Stack, 3);
+    AS_Push(Stack, 37);
+    AS_Push(Stack, 11);
+    AS_Push(Stack, 12);
 
-    // printf("%d, %d, %d\n\n", Stack->Capacity, AS_GetSize(Stack), AS_Top(Stack));
+    printf("%d, %d, %d\n\n", Stack->Capacity, AS_GetSize(Stack), AS_Top(Stack));
 
-    // for (i = 0; i < 4; i++)
-    // {
-    //     if (AS_IsEmpty(Stack))
-    //         break;
+    for (i = 0; i < 4; i++)
+    {
+        if (AS_IsEmpty(Stack))
+            break;
         
-    //     printf("pop! %d, ", AS_Pop(Stack));
+        printf("pop! %d, ", AS_Pop(Stack));
 
-    //     if (!AS_IsEmpty(Stack))
-    //         printf("Cur Top : %d\n", AS_Top(Stack));
-    //     else
-    //         printf("Stack Empty!\n");
-    // }
+        if (!AS_IsEmpty(Stack))
+            printf("Cur Top : %d\n", AS_Top(Stack));
+        else
+            printf("Stack Empty!\n");
+    }
 
-    // AS_DestroyStack(Stack);
+    AS_DestroyStack(Stack);
 
     // Queue ex
-    // int i;
-    // CircularQueue* Queue;
+    i = 0;
+    CircularQueue* Queue;
 
-    // CQ_CreateQueue(&Queue, 10);
+    CQ_CreateQueue(&Queue, 10);
 
-    // CQ_EnQueue(Queue, 1);
-    // CQ_EnQueue(Queue, 2);
-    // CQ_EnQueue(Queue, 3);
-    // CQ_EnQueue(Queue, 4);
+    CQ_EnQueue(Queue, 1);
+    CQ_EnQueue(Queue, 2);
+    CQ_EnQueue(Queue, 3);
+    CQ_EnQueue(Queue, 4);
 
-    // for (i = 0; i < 3; i++)
-    // {
-    //     printf("Dequeue %d, ", CQ_DeQueue(Queue));
-    //     printf("Front %d, Rear %d\n", Queue->Front, Queue->Rear);
-    // }
+    for (i = 0; i < 3; i++)
+    {
+        printf("Dequeue %d, ", CQ_DeQueue(Queue));
+        printf("Front %d, Rear %d\n", Queue->Front, Queue->Rear);
+    }
 
-    // i = 100;
-    // while (CQ_IsFull(Queue) == 0)
-    // {
-    //     CQ_EnQueue(Queue, i++);
-    // }
+    i = 100;
+    while (CQ_IsFull(Queue) == 0)
+    {
+        CQ_EnQueue(Queue, i++);
+    }
 
-    // printf("%d, %d\n\n", Queue->Capacity, CQ_GetSize(Queue));
-    // while (CQ_IsEmpty(Queue) == 0)
-    // {
-    //     printf("Dequeue %d, ", CQ_DeQueue(Queue));
-    //     printf("Front %d, Rear %d\n", Queue->Front, Queue->Rear);
-    // }
+    printf("%d, %d\n\n", Queue->Capacity, CQ_GetSize(Queue));
+    while (CQ_IsEmpty(Queue) == 0)
+    {
+        printf("Dequeue %d, ", CQ_DeQueue(Queue));
+        printf("Front %d, Rear %d\n", Queue->Front, Queue->Rear);
+    }
 
-    // CQ_DestroyQueue(Queue);
+    CQ_DestroyQueue(Queue);
 
 
     // LCRS ex

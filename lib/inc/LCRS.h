@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef char ElementType;
+typedef int ElementType; // typedef char ElementType;
 
 typedef struct tagLCRSNode
 {

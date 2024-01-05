@@ -44,6 +44,8 @@
         "lcrs.h": "c",
         "stdlib.h": "c",
         "arraystack.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "circularqueue.h": "c",
+        "dll.h": "c"
     }
 }
