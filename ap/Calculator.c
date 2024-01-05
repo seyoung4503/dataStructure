@@ -92,7 +92,7 @@ void GetPostfix(char* InfixExpression, char* PostfixExpression)
 
         if (Type == OPERAND)
         {
-            strcat();
+            strcat(PostfixExpression, Token);
         }
     }
 }
