@@ -1,0 +1,9 @@
+digraph Stack {
+	stack [label="{\"Element 1\" | Element 2 | Element 3 | \"end =\"\"\" | \"       \"}" fontsize=10 shape=record]
+	rank=same
+	"stack:head" [label=head shape=plaintext width=0]
+	"stack:data1" [label=data1 shape=plaintext width=0]
+	"stack:data2" [label=data2 shape=plaintext width=0]
+	"stack:data3" [label=data3 shape=plaintext width=0]
+	"stack:tail" [label=tail shape=plaintext width=0]
+}

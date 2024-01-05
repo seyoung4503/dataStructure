@@ -1,0 +1,9 @@
+// Queue
+digraph {
+	graph [rankdir=LR]
+	front [label=Front shape=circle]
+	rear [label=Rear shape=circle]
+	stack [label="{ <tail> · | · | <data1> · | <data2> · | <data4> Element 4 |<data3> Element 3 | <head> Element 2 }" fontsize=10 shape=record]
+	rear -> stack:data2 [label="enQueue()"]
+	stack:head -> front [label="deQueue()"]
+}
