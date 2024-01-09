@@ -6,10 +6,10 @@
 
 
 typedef int ElementType;
-// typedef struct tagNode
-// {
-//     ElementType Data;
-// } Node;
+typedef struct tagNode
+{
+    ElementType Data;
+} Node;
 
 typedef struct tagCircularQueue
 {

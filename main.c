@@ -2,6 +2,7 @@
 #include "ArrayStack.h"
 #include "CircularQueue.h"
 #include "LCRS.h"
+#include "BinaryTree.h"
 
 int main()
 {
@@ -88,36 +89,66 @@ int main()
     CQ_DestroyQueue(Queue);
 
 
-    // LCRS ex
-    LCRSNode* Root = LCRS_CreateNode('A');
+    // // LCRS ex
+    // LCRSNode* Root = LCRS_CreateNode('A');
 
-    LCRSNode* B = LCRS_CreateNode('B');
-    LCRSNode* C = LCRS_CreateNode('C');
-    LCRSNode* D = LCRS_CreateNode('D');
-    LCRSNode* E = LCRS_CreateNode('E');
-    LCRSNode* F = LCRS_CreateNode('F');
-    LCRSNode* G = LCRS_CreateNode('G');
-    LCRSNode* H = LCRS_CreateNode('H');
-    LCRSNode* I = LCRS_CreateNode('I');
-    LCRSNode* J = LCRS_CreateNode('J');
-    LCRSNode* K = LCRS_CreateNode('K');
+    // LCRSNode* B = LCRS_CreateNode('B');
+    // LCRSNode* C = LCRS_CreateNode('C');
+    // LCRSNode* D = LCRS_CreateNode('D');
+    // LCRSNode* E = LCRS_CreateNode('E');
+    // LCRSNode* F = LCRS_CreateNode('F');
+    // LCRSNode* G = LCRS_CreateNode('G');
+    // LCRSNode* H = LCRS_CreateNode('H');
+    // LCRSNode* I = LCRS_CreateNode('I');
+    // LCRSNode* J = LCRS_CreateNode('J');
+    // LCRSNode* K = LCRS_CreateNode('K');
 
-    LCRS_Add_ChildNode(Root, B);
-    LCRS_Add_ChildNode(B, C);
-    LCRS_Add_ChildNode(B, D);
-    LCRS_Add_ChildNode(D, E);
-    LCRS_Add_ChildNode(D, F);
+    // LCRS_Add_ChildNode(Root, B);
+    // LCRS_Add_ChildNode(B, C);
+    // LCRS_Add_ChildNode(B, D);
+    // LCRS_Add_ChildNode(D, E);
+    // LCRS_Add_ChildNode(D, F);
 
-    LCRS_Add_ChildNode(Root, G);
-    LCRS_Add_ChildNode(G, H);
+    // LCRS_Add_ChildNode(Root, G);
+    // LCRS_Add_ChildNode(G, H);
 
-    LCRS_Add_ChildNode(Root, I);
-    LCRS_Add_ChildNode(I, J);
-    LCRS_Add_ChildNode(J, K);
+    // LCRS_Add_ChildNode(Root, I);
+    // LCRS_Add_ChildNode(I, J);
+    // LCRS_Add_ChildNode(J, K);
 
-    LCRS_PrintTree(Root, 0);
+    // LCRS_PrintTree(Root, 0);
 
-    LCRS_DestroyTree(Root);
+    // LCRS_DestroyTree(Root);
+
+    SBTNode* A = SBT_CreateNode('A');
+    SBTNode* B = SBT_CreateNode('B');
+    SBTNode* C = SBT_CreateNode('C');
+    SBTNode* D = SBT_CreateNode('D');
+    SBTNode* E = SBT_CreateNode('E');
+    SBTNode* F = SBT_CreateNode('F');
+    SBTNode* G = SBT_CreateNode('G');
+
+    A->Left = B;
+    B->Left = C;
+    B->Right = D;
+
+    A->Right = E;
+    E->Left = F;
+    E->Right = G;
+
+    printf("Preorder ...\n");
+    SBT_PreorderPrintTree(A);
+    printf("\n\n");
+
+    printf("Inorder ...\n");
+    SBT_InorderPrintTree(A);
+    printf("\n\n");
+
+    printf("Postorder ...\n");
+    SBT_PostorderPrintTree(A);
+    printf("\n\n");
+
+    SBT_DestroyTree(A);
 
     return 0;
 }

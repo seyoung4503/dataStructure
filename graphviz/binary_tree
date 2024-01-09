@@ -1,0 +1,16 @@
+digraph Tree {
+	graph [rankdir=TB]
+	a [shape=circle]
+	b [shape=circle]
+	c [shape=circle]
+	d [shape=circle]
+	e [shape=circle]
+	f [shape=circle]
+	g [shape=circle]
+	a -> b [dir=none fontsize=10]
+	a -> c [dir=none fontsize=10]
+	b -> d [dir=none fontsize=10]
+	b -> e [dir=none fontsize=10]
+	c -> f [dir=none fontsize=10]
+	c -> g [dir=none fontsize=10]
+}

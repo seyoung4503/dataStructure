@@ -1,0 +1,25 @@
+digraph Tree {
+	graph [rankdir=TB]
+	node [shape=circle width=0.6]
+	2
+	7
+	52
+	13
+	8
+	67
+	99
+	17
+	43
+	88
+	37
+	2 -> 7 [dir=none fontsize=10]
+	2 -> 52 [dir=none fontsize=10]
+	7 -> 13 [dir=none fontsize=10]
+	7 -> 8 [dir=none fontsize=10]
+	52 -> 67 [dir=none fontsize=10]
+	52 -> 99 [dir=none fontsize=10]
+	13 -> 17 [dir=none fontsize=10]
+	13 -> 43 [dir=none fontsize=10]
+	8 -> 88 [dir=none fontsize=10]
+	8 -> 37 [dir=none fontsize=10]
+}
