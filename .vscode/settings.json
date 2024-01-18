@@ -46,6 +46,7 @@
         "arraystack.h": "c",
         "stdio.h": "c",
         "circularqueue.h": "c",
-        "dll.h": "c"
+        "dll.h": "c",
+        "rbt.h": "c"
     }
 }
