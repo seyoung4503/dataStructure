@@ -234,19 +234,49 @@ int main()
     // }
     // RBT_DestroyTree(Tree);
 
+    // // Hash Table ex)
+    // HashTable* HT = CreateHashTable(193);
 
-    HashTable* HT = CreateHashTable(193);
+    // HT_Set(HT, "418", 32114);
+    // HT_Set(HT, "9", 514);
+    // HT_Set(HT, "27", 8917);
+    // HT_Set(HT, "1031", 286);
 
-    HT_Set(HT, "418", 32114);
-    HT_Set(HT, "9", 514);
-    HT_Set(HT, "27", 8917);
-    HT_Set(HT, "1031", 286);
+    // printf("Key %d, Value: %d\n", 418, HT_Get(HT, "418"));
+    // printf("Key %d, Value: %d\n", 9, HT_Get(HT, "9"));
+    // printf("Key %d, Value: %d\n", 27, HT_Get(HT, "27"));
+    // printf("Key %d, Value: %d\n", 1031, HT_Get(HT, "286"));
 
-    printf("Key %d, Value: %d\n", 418, HT_Get(HT, "418"));
-    printf("Key %d, Value: %d\n", 9, HT_Get(HT, "9"));
-    printf("Key %d, Value: %d\n", 27, HT_Get(HT, "27"));
-    printf("Key %d, Value: %d\n", 1031, HT_Get(HT, "286"));
+    // HT_DestroyHashTable(HT);
 
-    HT_DestroyHashTable(HT);
+
+    HashTable* HT = CreateHashTable( 12289 );
+
+    HT_Set( HT, "MSFT",   "Microsoft Corporation");
+    HT_Set( HT, "JAVA",   "Sun Microsystems");
+    HT_Set( HT, "REDH",   "Red Hat Linux");
+    HT_Set( HT, "APAC",   "Apache Org");
+    HT_Set( HT, "ZYMZZ",  "Unisys Ops Check"); 
+    HT_Set( HT, "IBM",    "IBM Ltd.");
+    HT_Set( HT, "ORCL",   "Oracle Corporation");
+    HT_Set( HT, "CSCO",   "Cisco Systems, Inc.");
+    HT_Set( HT, "GOOG",   "Google Inc.");
+    HT_Set( HT, "YHOO",   "Yahoo! Inc.");
+    HT_Set( HT, "NOVL",   "Novell, Inc.");
+
+    printf("\n");
+    printf("Key:%s, Value:%s\n", "MSFT",   HT_Get( HT, "MSFT" ) );
+    printf("Key:%s, Value:%s\n", "REDH",   HT_Get( HT, "REDH" ) );
+    printf("Key:%s, Value:%s\n", "APAC",   HT_Get( HT, "APAC" ) );
+    printf("Key:%s, Value:%s\n", "ZYMZZ",  HT_Get( HT, "ZYMZZ" ) );
+    printf("Key:%s, Value:%s\n", "JAVA",   HT_Get( HT, "JAVA" ) );
+    printf("Key:%s, Value:%s\n", "IBM",    HT_Get( HT, "IBM" ) );
+    printf("Key:%s, Value:%s\n", "ORCL",   HT_Get( HT, "ORCL" ) );
+    printf("Key:%s, Value:%s\n", "CSCO",   HT_Get( HT, "CSCO" ) );
+    printf("Key:%s, Value:%s\n", "GOOG",   HT_Get( HT, "GOOG" ) );
+    printf("Key:%s, Value:%s\n", "YHOO",   HT_Get( HT, "YHOO" ) );
+    printf("Key:%s, Value:%s\n", "NOVL",   HT_Get( HT, "NOVL" ) );
+
+    HT_DestroyHashTable( HT );
     return 0;
 }
