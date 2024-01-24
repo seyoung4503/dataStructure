@@ -4,6 +4,7 @@
 // #include "LCRS.h"
 // #include "BinaryTree.h"
 #include "RBT.h"
+#include "Hash.h"
 
 RBTNode* Nil;
 
@@ -154,85 +155,98 @@ int main()
     // SBT_DestroyTree(A);
 
 
-    // RBT ex
-    RBTNode* Tree = NULL;
-    RBTNode* Node = NULL;
+    // // RBT ex
+    // RBTNode* Tree = NULL;
+    // RBTNode* Node = NULL;
 
-    Nil = RBT_CreateNode(0);
-    Nil->Color = BLACK;
+    // Nil = RBT_CreateNode(0);
+    // Nil->Color = BLACK;
 
-    while (1)
-    {
-        int cmd = 0;
-        int param = 0;
-        char buffer[10];
+    // while (1)
+    // {
+    //     int cmd = 0;
+    //     int param = 0;
+    //     char buffer[10];
 
-        RBTNode* debug = NULL;
+    //     printf("Enter command number : \n");
+    //     printf("(1) Create a node, (2) Remove a node, (3) Search a node, (4) Display Tree, (5) Quit\n");
+    //     printf("Command number : ");
 
-        printf("Enter command number : \n");
-        printf("(1) Create a node, (2) Remove a node, (3) Search a node, (4) Display Tree, (5) Quit\n");
-        printf("Command number : ");
+    //     fgets(buffer, sizeof(buffer)-1, stdin);
+    //     sscanf(buffer, "%d", &cmd);
 
-        fgets(buffer, sizeof(buffer)-1, stdin);
-        sscanf(buffer, "%d", &cmd);
+    //     if (cmd < 1 || cmd > 5)
+    //     {
+    //         printf("Invalid command number.\n");
+    //         continue;
+    //     }
+    //     else if (cmd == 4)
+    //     {
+    //         RBT_PrintTree(Tree, 0, 0);
+    //         printf("\n");
+    //         continue;
+    //     }
+    //     else if (cmd == 5)
+    //         break;
 
-        if (cmd < 1 || cmd > 5)
-        {
-            printf("Invalid command number.\n");
-            continue;
-        }
-        else if (cmd == 4)
-        {
-            RBT_PrintTree(Tree, 0, 0);
-            printf("\n");
-            continue;
-        }
-        else if (cmd == 5)
-            break;
+    //     printf("Enter param (1~200)\n");
 
-        printf("Enter param (1~200)\n");
+    //     fgets(buffer, sizeof(buffer)-1, stdin);
+    //     sscanf(buffer, "%d", &param);
 
-        fgets(buffer, sizeof(buffer)-1, stdin);
-        sscanf(buffer, "%d", &param);
+    //     if (param < 1 || param > 200)
+    //     {
+    //         printf("Invalid param. %d\n", param);
+    //         continue;
+    //     }
 
-        if (param < 1 || param > 200)
-        {
-            printf("Invalid param. %d\n", param);
-            continue;
-        }
+    //     switch (cmd)
+    //     {
+    //         case 1:
+    //             // debug = RBT_CreateNode(param);
+    //             // printf("debug %d", debug->Data);
+    //             RBT_InsertNode(&Tree, RBT_CreateNode(param));
+    //             break;
 
-        switch (cmd)
-        {
-            case 1:
-                // debug = RBT_CreateNode(param);
-                // printf("debug %d", debug->Data);
-                RBT_InsertNode(&Tree, RBT_CreateNode(param));
-                break;
+    //         case 2:
+    //             Node = RBT_RemoveNode(&Tree, param);
 
-            case 2:
-                Node = RBT_RemoveNode(&Tree, param);
-
-                if (Node == NULL)
-                    printf("NOT FOUND, %d", param);
-                else
-                    RBT_DestroyNode(Node);
+    //             if (Node == NULL)
+    //                 printf("NOT FOUND, %d", param);
+    //             else
+    //                 RBT_DestroyNode(Node);
                 
-                break;
+    //             break;
             
-            case 3:
-                Node = RBT_SearchNode(Tree, param);
+    //         case 3:
+    //             Node = RBT_SearchNode(Tree, param);
 
-                if (Node == NULL)
-                    printf("NOT FOUND, %d", param);
-                else
-                    printf( "FOUND NODE : %d(Color:%s)\n", Node->Data, (Node->Color == RED)?"RED":"BLACK");
+    //             if (Node == NULL)
+    //                 printf("NOT FOUND, %d", param);
+    //             else
+    //                 printf( "FOUND NODE : %d(Color:%s)\n", Node->Data, (Node->Color == RED)?"RED":"BLACK");
                 
-                break;
+    //             break;
             
-            printf("\n");
+    //         printf("\n");
 
-        }
-    }
-    RBT_DestroyTree(Tree);
+    //     }
+    // }
+    // RBT_DestroyTree(Tree);
+
+
+    HashTable* HT = CreateHashTable(193);
+
+    HT_Set(HT, "418", 32114);
+    HT_Set(HT, "9", 514);
+    HT_Set(HT, "27", 8917);
+    HT_Set(HT, "1031", 286);
+
+    printf("Key %d, Value: %d\n", 418, HT_Get(HT, "418"));
+    printf("Key %d, Value: %d\n", 9, HT_Get(HT, "9"));
+    printf("Key %d, Value: %d\n", 27, HT_Get(HT, "27"));
+    printf("Key %d, Value: %d\n", 1031, HT_Get(HT, "286"));
+
+    HT_DestroyHashTable(HT);
     return 0;
 }
