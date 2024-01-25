@@ -1,5 +1,5 @@
 
-#include "Hash.h"
+#include "DLLHash.h"
 
 HashTable* CreateHashTable(int TableSize)
 {   
@@ -10,20 +10,18 @@ HashTable* CreateHashTable(int TableSize)
 
     memset(HT->Table, 0, sizeof(List)*TableSize);
 
-    
-
     return HT;
 }
 
 HashNode* CHT_CreateNode(KeyType Key, ValueType Value)
 {
     HashNode* NewNode = (HashNode*)malloc(sizeof(HashNode));
+    Node* DLLNode = NULL;
+    DLL_CreateNode();
 
     NewNode->Key = (char*)malloc(sizeof(char) * (strlen(Key)+1));
     strcpy(NewNode->Key, Key);
-    NewNode->Value = (char*)malloc(sizeof(char) * (strlen(Value)+1));
-    strcpy(NewNode->Value, Value);
-    NewNode->Next = NULL;
+    NewNode->DLL_Hash = 
 
     return NewNode;
 
@@ -50,7 +48,18 @@ void HT_Set(HashTable* HT, KeyType Key, ValueType Value)
         printf("collision occured : key(%s), address(%d)\n", Key, Address);
     }
 
-    HT->Table[Address] = NewNode;
+    HT->Table[Address] = NewNode; // HT와 List node간 주소 연결
+
+
+    int Address = Hash(Key, strlen(Key), HT->TableSize);
+    List ListNode = HT->Table[Address];
+
+    if (ListNode->DLL_Hash == NULL)
+    {
+
+    }
+
+
 }
 
 ValueType HT_Get(HashTable* HT, KeyType Key)

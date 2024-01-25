@@ -47,6 +47,18 @@
         "stdio.h": "c",
         "circularqueue.h": "c",
         "dll.h": "c",
-        "rbt.h": "c"
+        "rbt.h": "c",
+        "__debug": "cpp",
+        "atomic": "cpp",
+        "exception": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "tuple": "cpp",
+        "typeinfo": "cpp",
+        "vector": "cpp"
     }
 }

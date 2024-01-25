@@ -1,0 +1,13 @@
+// chain
+digraph {
+	graph [rankdir=LR]
+	front [label=a rank=same shape=record]
+	rear [label=b rank=same shape=record]
+	c [label=c rank=same shape=record]
+	d [label=d rank=same shape=record]
+	stack [label="{ <tail> Address 7 | Address 6 | <data1> Address 5 | <data2> Address 4 | <data4> Address 3 |<data3> Address 2 | <head> Address 1 }" fontsize=10 shape=record]
+	stack:data2:s -> rear [lhead=stack]
+	stack:head:s -> front [lhead=stack]
+	front:e -> c [lhead=stack]
+	c:e -> d [lhead=stack]
+}

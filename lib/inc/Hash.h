@@ -18,10 +18,6 @@ typedef struct tagHashNode
     ValueType Value; 
 
     struct tagHashNode* Next;
-    
-    // DLL 노드 추가
-    // struct Node* Next;
-    // Next 노드는 Data, Prev, Next DLL의 요소를 모두 가진다.
 } HashNode;
 
 typedef HashNode* List;
